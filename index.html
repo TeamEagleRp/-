@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -44,7 +43,6 @@
         repeating-linear-gradient(-45deg, rgba(229, 184, 75, 0.02) 0px, rgba(229, 184, 75, 0.02) 2px, transparent 2px, transparent 16px);
     }
 
-    /* Tatreez Top Trim */
     .tatreez-strip {
       height: 6px;
       width: 100%;
@@ -57,7 +55,6 @@
       );
     }
 
-    /* Sticky Top Navbar */
     .navbar {
       position: sticky;
       top: 0;
@@ -110,7 +107,29 @@
     .nav-controls {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-link-btn {
+      background: rgba(229, 184, 75, 0.1);
+      border: 1px solid var(--border-subtle);
+      color: var(--gold-light);
+      padding: 0.45rem 0.95rem;
+      border-radius: 11px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link-btn:hover {
+      border-color: var(--gold);
+      background: rgba(229, 184, 75, 0.18);
+      transform: translateY(-2px);
     }
 
     .xp-badge {
@@ -147,14 +166,12 @@
       transform: translateY(-2px);
     }
 
-    /* Main Container */
     .container {
       max-width: 1120px;
       margin: 0 auto;
       padding: 2rem 1.25rem 4rem;
     }
 
-    /* Hero Section */
     .hero {
       text-align: center;
       margin-bottom: 2.75rem;
@@ -222,7 +239,6 @@
       transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    /* Gates Grid */
     .gates-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -348,7 +364,6 @@
       gap: 0.35rem;
     }
 
-    /* Quiz View */
     .quiz-screen {
       display: none;
       max-width: 780px;
@@ -522,7 +537,6 @@
       cursor: default;
     }
 
-    /* Explanation Box */
     .explanation-box {
       display: none;
       margin-top: 1.5rem;
@@ -568,6 +582,7 @@
       gap: 0.5rem;
       box-shadow: 0 6px 20px rgba(229, 184, 75, 0.25);
       transition: all 0.2s ease;
+      text-decoration: none;
     }
 
     .btn-primary:hover {
@@ -575,7 +590,6 @@
       box-shadow: 0 10px 25px rgba(229, 184, 75, 0.38);
     }
 
-    /* Gate Result Screen */
     .result-screen {
       display: none;
       max-width: 620px;
@@ -655,6 +669,10 @@
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
     .btn-secondary:hover {
@@ -662,7 +680,6 @@
       color: var(--gold-light);
     }
 
-    /* Floating XP Toast */
     .xp-toast {
       position: fixed;
       top: 82px;
@@ -686,14 +703,26 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 2rem 1rem;
       color: var(--text-muted);
-      font-size: 0.88rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.92rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       margin-top: 3rem;
+      background: rgba(11, 14, 20, 0.65);
+    }
+
+    .footer-title {
+      font-weight: 800;
+      color: var(--gold-light);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-school {
+      color: var(--text-muted);
+      font-weight: 700;
     }
 
     @keyframes fadeInDown {
@@ -726,7 +755,6 @@
 
   <div class="tatreez-strip"></div>
 
-  <!-- Sticky Navigation Bar -->
   <header class="navbar">
     <div class="brand" onclick="goHome()">
       <div class="brand-icon">🔑</div>
@@ -737,6 +765,7 @@
     </div>
 
     <div class="nav-controls">
+      <a class="nav-link-btn" href="creators.html">👥 إنشاء الطالبين</a>
       <div class="xp-badge" title="مجموع نقاط الخبرة المكتسبة">
         <span>✨</span>
         <span id="totalXpDisplay">0</span>
@@ -746,11 +775,9 @@
     </div>
   </header>
 
-  <!-- Floating XP Notification -->
   <div class="xp-toast" id="xpToast">+50 XP أحسنت!</div>
 
   <main class="container">
-    <!-- HOME VIEW: 6 HERITAGE GATES -->
     <section id="homeView">
       <div class="hero">
         <span class="hero-tag">🌿 فعالية يوم التراث الفلسطيني التفاعلية</span>
@@ -773,7 +800,6 @@
       <div class="gates-grid" id="gatesGrid"></div>
     </section>
 
-    <!-- QUIZ VIEW -->
     <section id="quizView" class="quiz-screen">
       <div class="quiz-topbar">
         <button class="btn-back" onclick="goHome()">→ العودة إلى البوابات</button>
@@ -805,7 +831,6 @@
       </div>
     </section>
 
-    <!-- RESULT VIEW -->
     <section id="resultView" class="result-screen">
       <div class="result-trophy" id="resultTrophy">🏆</div>
       <h2 id="resultHeading">أتممت البوابة بنجاح!</h2>
@@ -829,18 +854,17 @@
       <div class="result-buttons">
         <button class="btn-primary" onclick="goHome()">استكشاف بوابة أخرى 🏛️</button>
         <button class="btn-secondary" onclick="retryCurrentGate()">إعادة البوابة 🔁</button>
+        <a class="btn-secondary" href="creators.html">صفحة إنشاء الطالبين 👥</a>
       </div>
     </section>
   </main>
 
   <footer>
-    🇵🇸 صُمّم بحب للاحتفاء بيوم التراث الفلسطيني — الذاكرة التي لا تموت
+    <div class="footer-title">يوم التراث الفلسطيني</div>
+    <div class="footer-school"> مدرسة بيت الحكمه الإعدادية - الناصره</div>
   </footer>
 
   <script>
-    // ==========================================
-    // 1. HERITAGE GATES DATABASE (6 GATES x 5 Qs)
-    // ==========================================
     const gatesData = [
       {
         id: 'cities',
@@ -1078,9 +1102,6 @@
       }
     ];
 
-    // ==========================================
-    // 2. SOUND ENGINE (WEB AUDIO API)
-    // ==========================================
     let soundEnabled = true;
     let audioCtx = null;
 
@@ -1110,9 +1131,9 @@
     }
 
     function playCorrectSound() {
-      playTone(523.25, 'triangle', 0.18, 0, 0.18);    // C5
-      playTone(659.25, 'triangle', 0.18, 0.09, 0.18); // E5
-      playTone(783.99, 'triangle', 0.28, 0.18, 0.2);  // G5
+      playTone(523.25, 'triangle', 0.18, 0, 0.18);
+      playTone(659.25, 'triangle', 0.18, 0.09, 0.18);
+      playTone(783.99, 'triangle', 0.28, 0.18, 0.2);
     }
 
     function playWrongSound() {
@@ -1131,11 +1152,8 @@
       if (soundEnabled) playClickSound();
     }
 
-    // ==========================================
-    // 3. STATE MANAGEMENT & LOCALSTORAGE
-    // ==========================================
     const STORAGE_KEY = 'palestinian_heritage_gates_v1';
-    let gateBestScores = {}; // { gateId: maxXpEarned }
+    let gateBestScores = {};
 
     function loadProgress() {
       try {
@@ -1172,14 +1190,11 @@
       }
     }
 
-    // ==========================================
-    // 4. UI RENDERING & QUIZ FLOW
-    // ==========================================
     let currentGate = null;
     let currentQIndex = 0;
     let sessionScoreXP = 0;
     let sessionCorrectCount = 0;
-    let questionResults = []; // 'correct' | 'wrong'
+    let questionResults = [];
 
     function updateHeaderStats() {
       document.getElementById('totalXpDisplay').textContent = getTotalXP();
@@ -1263,7 +1278,6 @@
       document.getElementById('questionCounter').textContent = `السؤال ${currentQIndex + 1} من ${totalQs}`;
       document.getElementById('questionText').textContent = qObj.q;
 
-      // Render progress dots
       const dotsWrap = document.getElementById('questionDots');
       dotsWrap.innerHTML = '';
       for (let i = 0; i < totalQs; i++) {
@@ -1275,7 +1289,6 @@
         dotsWrap.appendChild(dot);
       }
 
-      // Render options
       const optionsList = document.getElementById('optionsList');
       optionsList.innerHTML = '';
       const letters = ['أ', 'ب', 'ج', 'د'];
@@ -1291,7 +1304,6 @@
         optionsList.appendChild(btn);
       });
 
-      // Reset explanation & next button
       document.getElementById('explanationBox').style.display = 'none';
       const nextBtn = document.getElementById('nextQuestionBtn');
       nextBtn.style.display = 'none';
@@ -1325,14 +1337,12 @@
         playWrongSound();
       }
 
-      // Update dot immediately
       const dots = document.querySelectorAll('.q-dot');
       if (dots[currentQIndex]) {
         dots[currentQIndex].classList.remove('active');
         dots[currentQIndex].classList.add(isCorrect ? 'correct' : 'wrong');
       }
 
-      // Show heritage explanation
       document.getElementById('explanationText').textContent = qObj.info;
       document.getElementById('explanationBox').style.display = 'block';
       document.getElementById('nextQuestionBtn').style.display = 'inline-flex';
@@ -1378,1398 +1388,9 @@
       showView('resultView');
     }
 
-    // Initialize App
     loadProgress();
     updateHeaderStats();
     renderGates();
   </script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>رحلة التراث الفلسطيني - بوابات الأسئلة التفاعلية | يوم التراث</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #0b0e14;
-      --bg-card: #131924;
-      --bg-card-hover: #1a2232;
-      --gold: #e5b84b;
-      --gold-light: #f8d678;
-      --gold-glow: rgba(229, 184, 75, 0.25);
-      --green: #10b981;
-      --green-dark: #059669;
-      --red: #ef4444;
-      --red-dark: #b91c1c;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(229, 184, 75, 0.22);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Cairo', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      min-height: 100vh;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(circle at 15% 20%, rgba(229, 184, 75, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-        repeating-linear-gradient(45deg, rgba(229, 184, 75, 0.02) 0px, rgba(229, 184, 75, 0.02) 2px, transparent 2px, transparent 16px),
-        repeating-linear-gradient(-45deg, rgba(229, 184, 75, 0.02) 0px, rgba(229, 184, 75, 0.02) 2px, transparent 2px, transparent 16px);
-    }
-
-    /* Tatreez Top Trim */
-    .tatreez-strip {
-      height: 6px;
-      width: 100%;
-      background: repeating-linear-gradient(
-        90deg,
-        #b91c1c 0px, #b91c1c 12px,
-        #e5b84b 12px, #e5b84b 18px,
-        #10b981 18px, #10b981 30px,
-        #0b0e14 30px, #0b0e14 36px
-      );
-    }
-
-    /* Sticky Top Navbar */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11, 14, 20, 0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 0.85rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      cursor: pointer;
-    }
-
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--gold), #b4821e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      box-shadow: 0 0 15px var(--gold-glow);
-      color: #0b0e14;
-      font-weight: 900;
-    }
-
-    .brand-text h1 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--gold-light);
-      line-height: 1.2;
-    }
-
-    .brand-text span {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      display: block;
-    }
-
-    .nav-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-    }
-
-    .xp-badge {
-      background: linear-gradient(135deg, rgba(229, 184, 75, 0.15), rgba(229, 184, 75, 0.05));
-      border: 1px solid var(--gold);
-      padding: 0.45rem 1rem;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 800;
-      color: var(--gold-light);
-      box-shadow: 0 0 12px rgba(229, 184, 75, 0.12);
-    }
-
-    .btn-icon {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-main);
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: all 0.2s ease;
-    }
-
-    .btn-icon:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      margin-bottom: 2.75rem;
-      animation: fadeInDown 0.6s ease;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      padding: 0.35rem 1rem;
-      border-radius: 999px;
-      background: rgba(229, 184, 75, 0.12);
-      border: 1px solid rgba(229, 184, 75, 0.35);
-      color: var(--gold-light);
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 0.85rem;
-    }
-
-    .hero h2 {
-      font-family: 'Amiri', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: #fff;
-      margin-bottom: 0.6rem;
-      text-shadow: 0 2px 18px rgba(229, 184, 75, 0.25);
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      max-width: 650px;
-      margin: 0 auto 1.5rem;
-      font-size: 1.02rem;
-      line-height: 1.7;
-    }
-
-    .overall-progress-wrap {
-      max-width: 540px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      padding: 0.9rem 1.2rem;
-      border-radius: 16px;
-      border: 1px solid var(--border-subtle);
-    }
-
-    .progress-header {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.88rem;
-      margin-bottom: 0.5rem;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .progress-bar-bg {
-      height: 10px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--gold), var(--green));
-      border-radius: 999px;
-      transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    /* Gates Grid */
-    .gates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .gate-card {
-      background: linear-gradient(180deg, var(--bg-card) 0%, #0f141e 100%);
-      border: 1px solid var(--border-subtle);
-      border-radius: 22px 22px 16px 16px;
-      padding: 1.65rem;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .gate-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0.6;
-      transition: opacity 0.3s ease;
-    }
-
-    .gate-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold);
-      background: var(--bg-card-hover);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(229, 184, 75, 0.14);
-    }
-
-    .gate-card:hover::before {
-      opacity: 1;
-    }
-
-    .gate-card.completed {
-      border-color: rgba(16, 185, 129, 0.45);
-    }
-
-    .gate-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1.1rem;
-    }
-
-    .gate-arch-icon {
-      width: 58px;
-      height: 66px;
-      background: radial-gradient(circle at top, rgba(229, 184, 75, 0.22), rgba(229, 184, 75, 0.04));
-      border: 1.5px solid var(--gold);
-      border-radius: 30px 30px 10px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      box-shadow: inset 0 4px 12px rgba(229, 184, 75, 0.15);
-    }
-
-    .gate-status-pill {
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text-muted);
-    }
-
-    .gate-status-pill.done {
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.35);
-    }
-
-    .gate-number {
-      font-size: 0.8rem;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .gate-title {
-      font-size: 1.32rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-
-    .gate-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 1.35rem;
-    }
-
-    .gate-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 0.95rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
-      font-size: 0.85rem;
-    }
-
-    .gate-score {
-      color: var(--gold-light);
-      font-weight: 700;
-    }
-
-    .gate-enter-btn {
-      color: var(--gold-light);
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    /* Quiz View */
-    .quiz-screen {
-      display: none;
-      max-width: 780px;
-      margin: 0 auto;
-      animation: fadeInUp 0.45s ease;
-    }
-
-    .quiz-topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-back {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-main);
-      padding: 0.55rem 1.1rem;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 0.92rem;
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      transition: all 0.2s;
-    }
-
-    .btn-back:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    .quiz-gate-badge {
-      font-weight: 800;
-      color: var(--gold-light);
-      font-size: 1.05rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .quiz-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      padding: 2rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      position: relative;
-    }
-
-    .q-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .q-xp-tag {
-      background: rgba(229, 184, 75, 0.14);
-      color: var(--gold-light);
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(229, 184, 75, 0.3);
-    }
-
-    .q-progress-dots {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .q-dot {
-      flex: 1;
-      height: 7px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .q-dot.active {
-      background: var(--gold);
-      box-shadow: 0 0 10px var(--gold-glow);
-    }
-
-    .q-dot.correct {
-      background: var(--green);
-    }
-
-    .q-dot.wrong {
-      background: var(--red);
-    }
-
-    .question-text {
-      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.65;
-      margin-bottom: 1.75rem;
-    }
-
-    .options-list {
-      display: grid;
-      gap: 0.95rem;
-    }
-
-    .option-btn {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1.5px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 1.05rem 1.25rem;
-      color: var(--text-main);
-      font-size: 1.05rem;
-      font-weight: 700;
-      text-align: right;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      transition: all 0.22s ease;
-    }
-
-    .option-btn:hover:not(:disabled) {
-      background: rgba(229, 184, 75, 0.09);
-      border-color: var(--gold);
-      transform: translateX(-4px);
-    }
-
-    .option-letter {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.07);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: var(--gold-light);
-      flex-shrink: 0;
-    }
-
-    .option-btn.correct {
-      background: rgba(16, 185, 129, 0.16);
-      border-color: var(--green);
-      color: #ecfdf5;
-    }
-
-    .option-btn.correct .option-letter {
-      background: var(--green);
-      color: #fff;
-    }
-
-    .option-btn.wrong {
-      background: rgba(239, 68, 68, 0.16);
-      border-color: var(--red);
-      color: #fef2f2;
-    }
-
-    .option-btn.wrong .option-letter {
-      background: var(--red);
-      color: #fff;
-    }
-
-    .option-btn:disabled {
-      cursor: default;
-    }
-
-    /* Explanation Box */
-    .explanation-box {
-      display: none;
-      margin-top: 1.5rem;
-      padding: 1.15rem 1.35rem;
-      border-radius: 16px;
-      background: rgba(229, 184, 75, 0.08);
-      border-right: 4px solid var(--gold);
-      animation: fadeInUp 0.3s ease;
-    }
-
-    .explanation-box h4 {
-      color: var(--gold-light);
-      font-size: 0.95rem;
-      margin-bottom: 0.35rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .explanation-box p {
-      color: #e5e7eb;
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-
-    .quiz-actions {
-      margin-top: 1.65rem;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #c89628);
-      color: #0b0e14;
-      border: none;
-      padding: 0.85rem 1.85rem;
-      border-radius: 14px;
-      font-size: 1.02rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 6px 20px rgba(229, 184, 75, 0.25);
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(229, 184, 75, 0.38);
-    }
-
-    /* Gate Result Screen */
-    .result-screen {
-      display: none;
-      max-width: 620px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      border: 1px solid var(--gold);
-      border-radius: 26px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(229, 184, 75, 0.15);
-      animation: popIn 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .result-trophy {
-      font-size: 4rem;
-      margin-bottom: 0.75rem;
-      display: inline-block;
-      animation: bounce 1.5s infinite;
-    }
-
-    .result-screen h2 {
-      font-size: 1.85rem;
-      color: var(--gold-light);
-      margin-bottom: 0.4rem;
-    }
-
-    .result-subtitle {
-      color: var(--text-muted);
-      margin-bottom: 1.75rem;
-      font-size: 1rem;
-    }
-
-    .result-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.85rem;
-      margin-bottom: 2rem;
-    }
-
-    .stat-box {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 1rem 0.6rem;
-    }
-
-    .stat-val {
-      font-size: 1.45rem;
-      font-weight: 900;
-      color: #fff;
-      display: block;
-    }
-
-    .stat-val.gold { color: var(--gold-light); }
-    .stat-val.green { color: #34d399; }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .result-buttons {
-      display: flex;
-      gap: 0.9rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-main);
-      padding: 0.85rem 1.5rem;
-      border-radius: 14px;
-      font-size: 0.98rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    /* Floating XP Toast */
-    .xp-toast {
-      position: fixed;
-      top: 82px;
-      left: 50%;
-      transform: translateX(-50%) translateY(-20px);
-      background: linear-gradient(135deg, var(--green), var(--green-dark));
-      color: #fff;
-      padding: 0.55rem 1.35rem;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 1rem;
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
-      opacity: 0;
-      pointer-events: none;
-      z-index: 999;
-      transition: all 0.35s ease;
-    }
-
-    .xp-toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      margin-top: 3rem;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.92); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    @media (max-width: 600px) {
-      .quiz-card { padding: 1.35rem; }
-      .result-stats { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="tatreez-strip"></div>
-
-  <!-- Sticky Navigation Bar -->
-  <header class="navbar">
-    <div class="brand" onclick="goHome()">
-      <div class="brand-icon">🔑</div>
-      <div class="brand-text">
-        <h1>رحلة التراث الفلسطيني</h1>
-        <span>بوابات الأسئلة التفاعلية | يوم التراث</span>
-      </div>
-    </div>
-
-    <div class="nav-controls">
-      <div class="xp-badge" title="مجموع نقاط الخبرة المكتسبة">
-        <span>✨</span>
-        <span id="totalXpDisplay">0</span>
-        <span>XP</span>
-      </div>
-      <button class="btn-icon" id="soundToggleBtn" onclick="toggleSound()" title="تفعيل / كتم الصوت">🔊</button>
-      <button class="btn-icon" onclick="resetAllProgress()" title="إعادة ضبط التقدم">🔄</button>
-    </div>
-  </header>
-
-  <!-- Floating XP Notification -->
-  <div class="xp-toast" id="xpToast">+50 XP أحسنت!</div>
-
-  <main class="container">
-    <!-- HOME VIEW: 6 HERITAGE GATES -->
-    <section id="homeView">
-      <div class="hero">
-        <span class="hero-tag">🌿 فعالية يوم التراث الفلسطيني التفاعلية</span>
-        <h2>افتح بوابات الذاكرة والهوية</h2>
-        <p>
-          اختر إحدى البوابات الست لاستكشاف كنوز التراث الفلسطيني العريق من مدن وتاريخ وأزياء ومأكولات وأمثال وفنون، واجمع نقاط الخبرة (XP) لتصبح حارساً للتراث.
-        </p>
-
-        <div class="overall-progress-wrap">
-          <div class="progress-header">
-            <span>إنجاز البوابات</span>
-            <span id="completedGatesText">0 / 6 بوابات مكتملة</span>
-          </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" id="overallProgressBar"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="gates-grid" id="gatesGrid"></div>
-    </section>
-
-    <!-- QUIZ VIEW -->
-    <section id="quizView" class="quiz-screen">
-      <div class="quiz-topbar">
-        <button class="btn-back" onclick="goHome()">→ العودة إلى البوابات</button>
-        <div class="quiz-gate-badge" id="quizGateTitle"></div>
-      </div>
-
-      <div class="quiz-card">
-        <div class="q-meta">
-          <span id="questionCounter">السؤال 1 من 5</span>
-          <span class="q-xp-tag">+50 XP لكل إجابة صحيحة</span>
-        </div>
-
-        <div class="q-progress-dots" id="questionDots"></div>
-
-        <h3 class="question-text" id="questionText"></h3>
-
-        <div class="options-list" id="optionsList"></div>
-
-        <div class="explanation-box" id="explanationBox">
-          <h4>💡 معلومة تراثية:</h4>
-          <p id="explanationText"></p>
-        </div>
-
-        <div class="quiz-actions">
-          <button class="btn-primary" id="nextQuestionBtn" style="display: none;" onclick="nextQuestion()">
-            السؤال التالي ←
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESULT VIEW -->
-    <section id="resultView" class="result-screen">
-      <div class="result-trophy" id="resultTrophy">🏆</div>
-      <h2 id="resultHeading">أتممت البوابة بنجاح!</h2>
-      <p class="result-subtitle" id="resultSubtext">لقد أثبتّ معرفتك الأصيلة بالتراث الفلسطيني</p>
-
-      <div class="result-stats">
-        <div class="stat-box">
-          <span class="stat-val green" id="resCorrectCount">5/5</span>
-          <span class="stat-label">الإجابات الصحيحة</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-val gold" id="resEarnedXp">+250 XP</span>
-          <span class="stat-label">نقاط هذه الجولة</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-val" id="resBestXp">250 XP</span>
-          <span class="stat-label">أعلى نتيجة للبوابة</span>
-        </div>
-      </div>
-
-      <div class="result-buttons">
-        <button class="btn-primary" onclick="goHome()">استكشاف بوابة أخرى 🏛️</button>
-        <button class="btn-secondary" onclick="retryCurrentGate()">إعادة البوابة 🔁</button>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    🇵🇸 صُمّم بحب للاحتفاء بيوم التراث الفلسطيني — الذاكرة التي لا تموت
-  </footer>
-
-  <script>
-    // ==========================================
-    // 1. HERITAGE GATES DATABASE (6 GATES x 5 Qs)
-    // ==========================================
-    const gatesData = [
-      {
-        id: 'cities',
-        number: 'البوابة الأولى',
-        title: 'بوابة المدن والمعالم',
-        icon: '🕌',
-        description: 'رحلة بين أسوار القدس وعكا، ومساجد الخليل ونابلس، ومعالم فلسطين التاريخية.',
-        questions: [
-          {
-            q: 'ما اسم البناء المثمّن ذي القبة الذهبية الذي شُيّد في عهد الخليفة عبد الملك بن مروان داخل المسجد الأقصى؟',
-            options: ['قبة الصخرة المشرفة', 'الجامع القبلي', 'قبة السلسلة', 'المصلى المرواني'],
-            answer: 0,
-            info: 'بُنيت قبة الصخرة المشرفة عام 72 هـ / 691 م بأمر من الخليفة الأموي عبد الملك بن مروان، وتُعد تحفة معمارية فريدة.'
-          },
-          {
-            q: 'أي مدينة فلسطينية تُلقب بـ "عروس البحر" وتشتهر ببرتقالها ومينائها التاريخي العريق؟',
-            options: ['حيفا', 'يافا', 'عكا', 'غزة'],
-            answer: 1,
-            info: 'يافا هي "عروس البحر"، ومن أقدم مدن العالم، واشتُهر برتقالها اليافاوي عالمياً بجودته العالية.'
-          },
-          {
-            q: 'كم يبلغ عدد أبواب سور البلدة القديمة في مدينة القدس المفتوحة والمغلقة معاً؟',
-            options: ['7 أبواب', '9 أبواب', '11 باباً', '14 باباً'],
-            answer: 2,
-            info: 'لسور القدس 11 باباً؛ منها 7 أبواب مفتوحة (كباب العامود وباب الخليل) و4 أبواب مغلقة (كباب الرحمة).'
-          },
-          {
-            q: 'بماذا تشتهر مدينة نابلس لدرجة أنها لُقبت بـ "دمشق الصغرى"؟',
-            options: ['صناعة الزجاج الخليلي', 'صناعة الصابون النابلسي والكنافة', 'صيد الأسماك واللؤلؤ', 'صناعة الخزف الأرمني'],
-            answer: 1,
-            info: 'تشتهر نابلس بصناعة الصابون من زيت الزيتون البكر منذ مئات السنين، إضافة إلى الكنافة النابلسية الشهيرة.'
-          },
-          {
-            q: 'في أي مدينة فلسطينية يقع المسجد الإبراهيمي الشريف؟',
-            options: ['بيت لحم', 'أريحا', 'الخليل', 'رام الله'],
-            answer: 2,
-            info: 'يقع الحرم الإبراهيمي في البلدة القديمة بمدينة الخليل، ويضم مقامات الأنبياء إبراهيم وإسحاق ويعقوب عليهم السلام.'
-          }
-        ]
-      },
-      {
-        id: 'tatreez',
-        number: 'البوابة الثانية',
-        title: 'بوابة الأزياء والتطريز',
-        icon: '🧵',
-        description: 'اكتشف أسرار غرزة الفلاحي، ورموز الأثواب الفلسطينية، والكوفية رمز الهوية.',
-        questions: [
-          {
-            q: 'ما اسم الغرزة الأساسية والأكثر شهرة في التطريز الفلسطيني التقليدي؟',
-            options: ['غرزة السلسلة', 'غرزة الفلاحي (الصليب)', 'غرزة الحشو', 'غرزة الماكينة'],
-            answer: 1,
-            info: 'تُعرف غرزة التطريز الأساسية باسم "غرزة الفلاحي" أو غرزة الصليب (X)، وقد أُدرج التطريز الفلسطيني في قائمة اليونسكو للتراث غير المادي.'
-          },
-          {
-            q: 'ما هي المنطقة الوسطى المستطيلة والمطرزة بكثافة على صدر الثوب الفلسطيني؟',
-            options: ['القبة', 'البنايق', 'الردن', 'الشدة'],
-            answer: 0,
-            info: 'تُسمى القطعة المربعة أو المستطيلة المطرزة على صدر الثوب "القَبّة"، وتعكس زخارفها هوية القرية أو المدينة.'
-          },
-          {
-            q: 'إلى ماذا ترمز النقوش الموجودة في الكوفية الفلسطينية (الشماغ الأبيض والأسود)؟',
-            options: ['النجوم والكواكب', 'شبكة الصيد وأوراق الزيتون وطرق التجارة', 'الخيول العربية', 'جبال القدس'],
-            answer: 1,
-            info: 'ترمز خطوط الكوفية إلى شبكة الصيادين في البحر المتوسط، وأوراق شجرة الزيتون المباركة، وطرق التجارة التاريخية.'
-          },
-          {
-            q: 'بأي لون تميّز ثوب "الملك" التلحمي الشهير في مدينة بيت لحم؟',
-            options: ['الأزرق النيلي', 'الأحمر القرمزي الموشّى بخيوط القصب الذهبية', 'الأخضر الزمردي', 'الأبيض السادة'],
-            answer: 1,
-            info: 'ثوب الملك التلحمي يُنسج من الحرير والكتان ويُطرز بخيوط القصب الذهبية والفضية على قماش أحمر قرمزي فاخر.'
-          },
-          {
-            q: 'ماذا كان يرمز اللون الأزرق النيلي في أثواب النساء في منطقة بئر السبع قديماً؟',
-            options: ['الأرملة أو الحداد', 'الفتاة العزباء', 'العروس ليلة زفافها', 'المرأة المسنّة'],
-            answer: 0,
-            info: 'في تراث بئر السبع، كانت المرأة الأرملة ترتدي الثوب المطرز باللون الأزرق النيلي دلالة على الحداد.'
-          }
-        ]
-      },
-      {
-        id: 'food',
-        number: 'البوابة الثالثة',
-        title: 'بوابة المطبخ والأكلات الشعبية',
-        icon: '🫒',
-        description: 'نكهات الأرض من زيت الزيتون والسماق إلى المسخن والمقلوبة والقدرة الخليلية.',
-        questions: [
-          {
-            q: 'ما هي المكونات الأساسية لطبق "المسخن" الفلسطيني التقليدي؟',
-            options: ['الأرز واللبن واللحم', 'خبز الطابون والبصل وزيت الزيتون والسماق والدجاج', 'البرغل والعدس والبصل', 'الفريكة والبازيلاء'],
-            answer: 1,
-            info: 'المسخن هو الطبق الوطني الفلسطيني، ويعتمد على خبز الطابون المغمّس بزيت الزيتون البكر والبصل المطهو بالسماق البلدي.'
-          },
-          {
-            q: 'كيف تُحضّر أكلة "القدرة الخليلية" التقليدية في مدينة الخليل؟',
-            options: ['في مقلاة حديدية على نار سريعة', 'في قدر نحاسي داخل فرن الحطب مع السمن البلدي والحمص والثوم', 'على البخار في أوانٍ خزفية', 'بالشواء المباشر على الفحم'],
-            answer: 1,
-            info: 'تُطهى القدرة الخليلية في قدور نحاسية خاصة داخل أفران الحطب، وتتميز بنكهة السمن البلدي والتوابل والحمص والثوم.'
-          },
-          {
-            q: 'ما اسم الأكلة التراثية الغزاوية التي تُحضّر من القمح المحمص المطحون واللحم والتوابل وتُؤكل في الأعياد؟',
-            options: ['السماقية', 'المفتول', 'الرمانية', 'المجدّرة'],
-            answer: 0,
-            info: 'السماقية من أشهر أكلات غزة التراثية، وتجمع بين السماق المنقوع والطحينة الحمراء واللحم والحمص والسلق.'
-          },
-          {
-            q: 'ما هي الحلوى الفلسطينية التقليدية التي تُعدّ بزيت الزيتون والسمسم وحبة البركة واليانسون في صوانٍ وتُقطع معينات؟',
-            options: ['الهريسة', 'الحلبة (صينية الحلبة)', 'القطايف', 'البرازق'],
-            answer: 1,
-            info: 'صينية الحلبة بالسميد وزيت الزيتون وحبة البركة واليانسون من أشهر الحلويات البيتية الدافئة في التراث الفلسطيني.'
-          },
-          {
-            q: 'ماذا يُسمى الموسم السنوي لقطف الزيتون في فلسطين والذي يشكل عرساً اجتماعياً وتعاونياً؟',
-            options: ['موسم الحصيدة', 'موسم الجدّاد (العونة)', 'موسم القطاف الصيفي', 'موسم البيدر'],
-            answer: 1,
-            info: 'يُعرف موسم قطف الزيتون بـ "الجدّاد"، وتتجلى فيه روح "العونة" حيث تتعاون العائلات والجيران في جني المحصول.'
-          }
-        ]
-      },
-      {
-        id: 'folklore',
-        number: 'البوابة الرابعة',
-        title: 'بوابة الدبكة والأهازيج',
-        icon: '🎶',
-        description: 'إيقاع الأرض في الدبكة الشعبية، ومواويل العتابا والميجنا، والآلات الموسيقية التراثية.',
-        questions: [
-          {
-            q: 'ما اسم الآلة الموسيقية الهوائية المصنوعة من القصب المزدوج وتُعد الروح الأساسية للدبكة الفلسطينية؟',
-            options: ['العود', 'المجوز (واليرغول)', 'القانون', 'الربابة'],
-            answer: 1,
-            info: 'المجوز واليرغول من أعرق الآلات الشعبية الفلسطينية المصنوعة من القصب، ويصدران صوتاً متواصلاً يحمس الراقصين.'
-          },
-          {
-            q: 'ماذا يُطلق على الشخص الذي يقود صف الدبكة الفلسطينية ويلوّح بالمنديل أو المسبحة؟',
-            options: ['الحادي', 'اللوّيح (الراص)', 'الزجّال', 'المطرب'],
-            answer: 1,
-            info: 'يُسمى قائد صف الدبكة "اللوّيح"، وهو المسؤول عن ضبط إيقاع الخطوات والحركات الاستعراضية في مقدمة الصف.'
-          },
-          {
-            q: 'ما هو الفن الغنائي الشعبي المرتجل الذي يُؤدى في الأعراس الفلسطينية على شكل مساجلة شعرية بين شاعرين؟',
-            options: ['الموشحات', 'الزجل الشعبي (الحداء)', 'القصيدة النبطية', 'المقام العراقي'],
-            answer: 1,
-            info: 'الزجل الشعبي والحداء من أهم فنون الأعراس الفلسطينية، حيث يتبادل الزجّالون الأبيات المرتجلة وسط تفاعل الحضور.'
-          },
-          {
-            q: 'ما هي الدبكة الفلسطينية الشهيرة التي تتميز بحركاتها السريعة والقفزات القوية وتنسب لمنطقة شمال فلسطين؟',
-            options: ['الدبكة الشمالية', 'الدبكة الدلعونا', 'الدبكة الطيّارة', 'الدبكة الكرادية'],
-            answer: 2,
-            info: 'الدبكة الطيّارة أو الشمالية السريعة تشتهر بإيقاعها المتسارع وحيويتها العالية في الأعراس والمناسبات.'
-          },
-          {
-            q: 'ما اسم الأغنية التراثية التي تودّع بها النساء العروس الفلسطينية ليلة حنائها بدموع الفرح؟',
-            options: ['يا طالعين ع الجبل', 'سبل عيونه ومد إيده يحنونه', 'عالروزنا', 'ظريف الطول'],
-            answer: 1,
-            info: 'أهزوجة "سبل عيونه" وترويدة الحناء من أعذب الأغاني النسائية التي تُغنى للعروسين في ليلة الحناء.'
-          }
-        ]
-      },
-      {
-        id: 'proverbs',
-        number: 'البوابة الخامسة',
-        title: 'بوابة الأمثال والحكايات',
-        icon: '📜',
-        description: 'حكمة الأجداد في الأمثال الشعبية، وحكايات الجدّات مثل "جبينة" و"نص نصيص".',
-        questions: [
-          {
-            q: 'أكمل المثل الشعبي الفلسطيني الشهير: "اللي ما إله كبير..."',
-            options: ['ما إله نصير', 'يشتري له كبير', 'يضيع في الطريق', 'يتعب كثير'],
-            answer: 1,
-            info: 'يؤكد المثل "اللي ما إله كبير يشتري له كبير" على مكانة كبار السن وحكمتهم في حل الخلافات وتوجيه الأبناء.'
-          },
-          {
-            q: 'ما هي العبارة التقليدية التي تبدأ بها الجدة الفلسطينية رواية "الخُرّافية" (الحكاية الشعبية) للأطفال؟',
-            options: ['في قديم الزمان وسالف العصر', 'كان يا ما كان في قديم الزمان، صلوا على النبي العدنان', 'اسمعوا يا صغار هذه القصة', 'ذات يوم في غابة بعيدة'],
-            answer: 1,
-            info: 'تبدأ الحكاية الفلسطينية بالصلاة على النبي، وتُختتم بعبارة "توتة توتة خلصت الحدوتة".'
-          },
-          {
-            q: 'ما معنى المثل الفلسطيني: "جبل لجبل ما يلتقي، وبني آدم لبني آدم يلتقي"؟',
-            options: ['صعوبة السفر بين الجبال', 'الدنيا صغيرة وقد يلتقي الناس مهما ابتعدوا', 'وجوب بناء الجسور', 'قوة الصداقة في السفر'],
-            answer: 1,
-            info: 'يُضرب هذا المثل للتذكير بأن الإنسان قد يلتقي بمن عرفه أو أساء إليه يوماً ما، فالدنيا تدور.'
-          },
-          {
-            q: 'أكمل المثل الفلسطيني الذي يحث على الاعتماد على النفس: "ما حك جلدك مثل..."',
-            options: ['إيدك', 'ظفرك', 'صاحبك', 'أخوك'],
-            answer: 1,
-            info: '"ما حك جلدك مثل ظفرك، فتولّ أنت جميع أمرك" مثل عربي وفلسطيني شهير يدعو للاعتماد على الذات.'
-          },
-          {
-            q: 'في الحكايات الشعبية الفلسطينية، من هو البطل الذكي صغير الحجم الذي تغلّب على الغولة بحيلته؟',
-            options: ['الشاطر حسن', 'نص نصيص', 'أبو زيد الهلالي', 'جحا'],
-            answer: 1,
-            info: 'حكاية "نص نصيص" من أشهر الحكايات التراثية الفلسطينية التي تعلّم الأطفال أن الذكاء والشجاعة يتغلبان على القوة الغاشمة.'
-          }
-        ]
-      },
-      {
-        id: 'crafts',
-        number: 'البوابة السادسة',
-        title: 'بوابة الحِرف والعمارة التراثية',
-        icon: '🏺',
-        description: 'فنون الفخار والزجاج الخليلي والصدف التلحمي، وعمارة الحوش والعقد الحجري.',
-        questions: [
-          {
-            q: 'بأي حرفة يدوية عريقة اشتُهرت مدينة بيت لحم وبيت ساحور منذ قرون؟',
-            options: ['الحفر على خشب الزيتون وعرق اللؤلؤ (الصدف)', 'نسج السجاد الفارسي', 'صناعة السيوف الدمشقية', 'دباغة الجلود'],
-            answer: 0,
-            info: 'تشتهر بيت لحم بحرفتي الحفر على خشب الزيتون والتطعيم بعرق اللؤلؤ (الصدف) لصناعة التحف والمجسمات الدقيقة.'
-          },
-          {
-            q: 'ما اسم التقنية المعمارية التقليدية في بناء سقوف البيوت الحجرية الفلسطينية القديمة؟',
-            options: ['السقف الخرساني', 'العقد (القبة المتقاطعة)', 'الأسقف الخشبية المعلقة', 'القرميد الأحمر فقط'],
-            answer: 1,
-            info: 'يُعد "العقد" الحجري من أروع فنون العمارة الفلسطينية، حيث يحافظ على برودة البيت صيفاً ودفئه شتاءً.'
-          },
-          {
-            q: 'ما اسم الإناء الفخاري الفلسطيني ذي العروتين الذي يُستخدم لحفظ ماء الشرب وتبريده طبيعياً؟',
-            options: ['الخابية', 'الإبريق (أو الجرّة)', 'المطربان', 'الزير'],
-            answer: 1,
-            info: 'الجرّة والإبريق الفخاري المصنوع في الخليل وغزة يبرّد الماء طبيعياً بفضل مسامات الفخار.'
-          },
-          {
-            q: 'ماذا يُسمى الفناء الداخلي المفتوح الذي تتجمع حوله غرف البيت الفلسطيني التقليدي؟',
-            options: ['الديوان', 'الحوش (أو أرض الدار)', 'العلّية', 'المضافة'],
-            answer: 1,
-            info: '"الحوش" هو قلب البيت الفلسطيني التقليدي، ويوفر الخصوصية والتهوية ومساحة لتجمع العائلة.'
-          },
-          {
-            q: 'بماذا تشتهر مدينة الخليل في مجال الصناعات الحرفية التقليدية الملونة؟',
-            options: ['نفخ الزجاج الخليلي والخزف', 'صناعة الورق', 'صناعة السفن', 'نحت الرخام'],
-            answer: 0,
-            info: 'تشتهر الخليل بصناعة الزجاج المنفوخ يدوياً بألوانه الزاهية (الأزرق الكوبالت والفيروزي والعنبري) منذ العهد الفينيقي والروماني.'
-          }
-        ]
-      }
-    ];
-
-    // ==========================================
-    // 2. SOUND ENGINE (WEB AUDIO API)
-    // ==========================================
-    let soundEnabled = true;
-    let audioCtx = null;
-
-    function initAudio() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-    }
-
-    function playTone(freq, type, duration, delay = 0, vol = 0.15) {
-      if (!soundEnabled) return;
-      initAudio();
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
-      gain.gain.setValueAtTime(vol, audioCtx.currentTime + delay);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + delay + duration);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start(audioCtx.currentTime + delay);
-      osc.stop(audioCtx.currentTime + delay + duration);
-    }
-
-    function playClickSound() {
-      playTone(520, 'sine', 0.08, 0, 0.08);
-    }
-
-    function playCorrectSound() {
-      playTone(523.25, 'triangle', 0.18, 0, 0.18);    // C5
-      playTone(659.25, 'triangle', 0.18, 0.09, 0.18); // E5
-      playTone(783.99, 'triangle', 0.28, 0.18, 0.2);  // G5
-    }
-
-    function playWrongSound() {
-      playTone(240, 'sawtooth', 0.2, 0, 0.12);
-      playTone(185, 'sawtooth', 0.28, 0.14, 0.12);
-    }
-
-    function playVictorySound() {
-      const notes = [523.25, 659.25, 783.99, 1046.50];
-      notes.forEach((n, i) => playTone(n, 'triangle', 0.25, i * 0.11, 0.18));
-    }
-
-    function toggleSound() {
-      soundEnabled = !soundEnabled;
-      document.getElementById('soundToggleBtn').textContent = soundEnabled ? '🔊' : '🔇';
-      if (soundEnabled) playClickSound();
-    }
-
-    // ==========================================
-    // 3. STATE MANAGEMENT & LOCALSTORAGE
-    // ==========================================
-    const STORAGE_KEY = 'palestinian_heritage_gates_v1';
-    let gateBestScores = {}; // { gateId: maxXpEarned }
-
-    function loadProgress() {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        if (saved) {
-          gateBestScores = JSON.parse(saved);
-        }
-      } catch (e) {
-        gateBestScores = {};
-      }
-    }
-
-    function saveProgress() {
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(gateBestScores));
-      } catch (e) {}
-    }
-
-    function getTotalXP() {
-      return Object.values(gateBestScores).reduce((sum, val) => sum + val, 0);
-    }
-
-    function getCompletedGatesCount() {
-      return Object.keys(gateBestScores).filter(id => gateBestScores[id] > 0).length;
-    }
-
-    function resetAllProgress() {
-      if (confirm('هل تريد حقاً إعادة ضبط جميع النقاط وتقدم البوابات؟')) {
-        gateBestScores = {};
-        saveProgress();
-        updateHeaderStats();
-        renderGates();
-        goHome();
-      }
-    }
-
-    // ==========================================
-    // 4. UI RENDERING & QUIZ FLOW
-    // ==========================================
-    let currentGate = null;
-    let currentQIndex = 0;
-    let sessionScoreXP = 0;
-    let sessionCorrectCount = 0;
-    let questionResults = []; // 'correct' | 'wrong'
-
-    function updateHeaderStats() {
-      document.getElementById('totalXpDisplay').textContent = getTotalXP();
-      const completed = getCompletedGatesCount();
-      const total = gatesData.length;
-      document.getElementById('completedGatesText').textContent = `${completed} / ${total} بوابات مكتملة`;
-      document.getElementById('overallProgressBar').style.width = `${(completed / total) * 100}%`;
-    }
-
-    function renderGates() {
-      const grid = document.getElementById('gatesGrid');
-      grid.innerHTML = '';
-
-      gatesData.forEach(gate => {
-        const bestXp = gateBestScores[gate.id] || 0;
-        const maxPossibleXp = gate.questions.length * 50;
-        const isCompleted = bestXp > 0;
-
-        const card = document.createElement('div');
-        card.className = `gate-card ${isCompleted ? 'completed' : ''}`;
-        card.onclick = () => startGate(gate.id);
-
-        card.innerHTML = `
-          <div>
-            <div class="gate-top">
-              <div class="gate-arch-icon">${gate.icon}</div>
-              <span class="gate-status-pill ${isCompleted ? 'done' : ''}">
-                ${isCompleted ? '✓ مكتملة' : 'بوابة مفتوحة'}
-              </span>
-            </div>
-            <div class="gate-number">${gate.number}</div>
-            <h3 class="gate-title">${gate.title}</h3>
-            <p class="gate-desc">${gate.description}</p>
-          </div>
-          <div class="gate-footer">
-            <span class="gate-score">⭐ أعلى نتيجة: ${bestXp} / ${maxPossibleXp} XP</span>
-            <span class="gate-enter-btn">ادخل البوابة ←</span>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function showView(viewId) {
-      document.getElementById('homeView').style.display = viewId === 'homeView' ? 'block' : 'none';
-      document.getElementById('quizView').style.display = viewId === 'quizView' ? 'block' : 'none';
-      document.getElementById('resultView').style.display = viewId === 'resultView' ? 'block' : 'none';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function goHome() {
-      playClickSound();
-      updateHeaderStats();
-      renderGates();
-      showView('homeView');
-    }
-
-    function startGate(gateId) {
-      playClickSound();
-      currentGate = gatesData.find(g => g.id === gateId);
-      currentQIndex = 0;
-      sessionScoreXP = 0;
-      sessionCorrectCount = 0;
-      questionResults = [];
-
-      document.getElementById('quizGateTitle').innerHTML = `${currentGate.icon} ${currentGate.title}`;
-      showView('quizView');
-      renderQuestion();
-    }
-
-    function retryCurrentGate() {
-      if (currentGate) {
-        startGate(currentGate.id);
-      }
-    }
-
-    function renderQuestion() {
-      const qObj = currentGate.questions[currentQIndex];
-      const totalQs = currentGate.questions.length;
-
-      document.getElementById('questionCounter').textContent = `السؤال ${currentQIndex + 1} من ${totalQs}`;
-      document.getElementById('questionText').textContent = qObj.q;
-
-      // Render progress dots
-      const dotsWrap = document.getElementById('questionDots');
-      dotsWrap.innerHTML = '';
-      for (let i = 0; i < totalQs; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'q-dot';
-        if (i === currentQIndex) dot.classList.add('active');
-        if (questionResults[i] === 'correct') dot.classList.add('correct');
-        if (questionResults[i] === 'wrong') dot.classList.add('wrong');
-        dotsWrap.appendChild(dot);
-      }
-
-      // Render options
-      const optionsList = document.getElementById('optionsList');
-      optionsList.innerHTML = '';
-      const letters = ['أ', 'ب', 'ج', 'د'];
-
-      qObj.options.forEach((optText, idx) => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerHTML = `
-          <span class="option-letter">${letters[idx]}</span>
-          <span>${optText}</span>
-        `;
-        btn.onclick = () => selectAnswer(idx, btn);
-        optionsList.appendChild(btn);
-      });
-
-      // Reset explanation & next button
-      document.getElementById('explanationBox').style.display = 'none';
-      const nextBtn = document.getElementById('nextQuestionBtn');
-      nextBtn.style.display = 'none';
-      nextBtn.textContent = currentQIndex === totalQs - 1 ? 'عرض نتيجة البوابة 🏆' : 'السؤال التالي ←';
-    }
-
-    function showXpToast() {
-      const toast = document.getElementById('xpToast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 1400);
-    }
-
-    function selectAnswer(selectedIndex, selectedBtn) {
-      const qObj = currentGate.questions[currentQIndex];
-      const allBtns = document.querySelectorAll('.option-btn');
-      allBtns.forEach(b => b.disabled = true);
-
-      const isCorrect = selectedIndex === qObj.answer;
-
-      if (isCorrect) {
-        selectedBtn.classList.add('correct');
-        sessionScoreXP += 50;
-        sessionCorrectCount++;
-        questionResults[currentQIndex] = 'correct';
-        playCorrectSound();
-        showXpToast();
-      } else {
-        selectedBtn.classList.add('wrong');
-        allBtns[qObj.answer].classList.add('correct');
-        questionResults[currentQIndex] = 'wrong';
-        playWrongSound();
-      }
-
-      // Update dot immediately
-      const dots = document.querySelectorAll('.q-dot');
-      if (dots[currentQIndex]) {
-        dots[currentQIndex].classList.remove('active');
-        dots[currentQIndex].classList.add(isCorrect ? 'correct' : 'wrong');
-      }
-
-      // Show heritage explanation
-      document.getElementById('explanationText').textContent = qObj.info;
-      document.getElementById('explanationBox').style.display = 'block';
-      document.getElementById('nextQuestionBtn').style.display = 'inline-flex';
-    }
-
-    function nextQuestion() {
-      playClickSound();
-      if (currentQIndex < currentGate.questions.length - 1) {
-        currentQIndex++;
-        renderQuestion();
-      } else {
-        finishGate();
-      }
-    }
-
-    function finishGate() {
-      playVictorySound();
-      const prevBest = gateBestScores[currentGate.id] || 0;
-      const newBest = Math.max(prevBest, sessionScoreXP);
-      gateBestScores[currentGate.id] = newBest;
-      saveProgress();
-      updateHeaderStats();
-
-      const totalQs = currentGate.questions.length;
-      document.getElementById('resCorrectCount').textContent = `${sessionCorrectCount} / ${totalQs}`;
-      document.getElementById('resEarnedXp').textContent = `+${sessionScoreXP} XP`;
-      document.getElementById('resBestXp').textContent = `${newBest} XP`;
-
-      if (sessionCorrectCount === totalQs) {
-        document.getElementById('resultTrophy').textContent = '👑';
-        document.getElementById('resultHeading').textContent = 'علامة كاملة! حارس التراث';
-        document.getElementById('resultSubtext').textContent = `أجبت على جميع أسئلة ${currentGate.title} بنجاح باهر!`;
-      } else if (sessionCorrectCount >= 3) {
-        document.getElementById('resultTrophy').textContent = '🏆';
-        document.getElementById('resultHeading').textContent = 'أتممت البوابة بنجاح!';
-        document.getElementById('resultSubtext').textContent = `معرفة رائعة في ${currentGate.title}، واصل رحلتك!`;
-      } else {
-        document.getElementById('resultTrophy').textContent = '🌿';
-        document.getElementById('resultHeading').textContent = 'خطوة جميلة في رحلة المعرفة';
-        document.getElementById('resultSubtext').textContent = 'يمكنك إعادة البوابة لرفع رصيدك من نقاط الخبرة.';
-      }
-
-      showView('resultView');
-    }
-
-    // Initialize App
-    loadProgress();
-    updateHeaderStats();
-    renderGates();
-  </script>
-</body>
->>>>>>> 8122960c778fe34b4a1c189e77e76a57a5c34ab9
 </html>
